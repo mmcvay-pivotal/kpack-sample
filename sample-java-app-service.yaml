@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    run: sample-java-app-service
+  name: sample-java-app-service
+spec:
+  ports:
+  - port: 8081
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    run: kpack-sample-java-app-service
+  type: NodePort
+status:
+  loadBalancer: {}

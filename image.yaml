@@ -1,0 +1,14 @@
+apiVersion: build.pivotal.io/v1alpha1
+kind: Image
+metadata:
+  name: tutorial-image
+spec:
+  tag: martinmpivotal/sample-java-app
+  serviceAccount: tutorial-service-account
+  builder:
+    name: default-builder
+    kind: ClusterBuilder
+  source:
+    git:
+      url: https://github.com/mmcvay-pivotal/sample-java-app
+      revision: master

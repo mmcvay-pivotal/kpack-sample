@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    run: kpack-sample-java-app-service
+  name: kpack-sample-java-app-service
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      run: kpack-sample-java-app-service
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        run: kpack-sample-java-app-service
+    spec:
+      containers:
+      - image: martinmpivotal/sample-java-app
+        name: beer-service
+        ports:
+        - containerPort: 8082
+        resources: {}
+status: {}
